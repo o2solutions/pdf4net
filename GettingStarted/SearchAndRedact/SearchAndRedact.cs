@@ -33,9 +33,9 @@ namespace O2S.Components.PDF4NET.Samples
             }
 
             using(FileStream output = File.Create("RedactedSearchResults.pdf"))
-			{
+            {
                 document.Save(output);
-			}
+            }
         }
     }
 }

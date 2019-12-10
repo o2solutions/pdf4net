@@ -1,0 +1,1 @@
+The `DigitalSignatureWithCustomAppearance` sample shows how to digitally sign a PDF file and use a hand written signature image for the signature appearance.
