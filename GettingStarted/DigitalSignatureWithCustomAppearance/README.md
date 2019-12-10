@@ -1,1 +1,5 @@
 The `DigitalSignatureWithCustomAppearance` sample shows how to digitally sign a PDF file and use a hand written signature image for the signature appearance.
+
+The custom appearance is created using the [`PDFAnnotationAppearance`](https://o2sol.com/pdf4net/help/pdf4net/webframe.html#O2S.Components.PDF4NET.NetStandard~O2S.Components.PDF4NET.Annotations.PDFAnnotationAppearance.html) class. Its `Canvas` property allows to include any kind of graphic content in the signature appearance. The signature image (a .png file) is loaded in a `PDFPngImage` object and drawn on the appearance's canvas.
+
+After all the digital signature properties have been set, the custom signature appearance is attached to the signature field by setting the `NormalAppearance` property on the signature widget with the annotation appearance object.
