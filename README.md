@@ -1,14 +1,14 @@
-# [PDF4NET](https://o2sol.com/pdf4net.vnext/overview.htm)
+# [PDF4NET](https://o2sol.com/pdf4net/overview.htm)
 
-This repository contains all the samples for [**PDF4NET**](https://o2sol.com/pdf4net.vnext/overview.htm) .NET library.
+This repository contains all the samples for [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) .NET library.
 
-[**PDF4NET**](https://o2sol.com/pdf4net.vnext/overview.htm) is a .NET library for generating and importing PDF documents on the fly from any .NET application. The library does not rely on any Adobe products for creating and importing PDF files. It hides the complex structure of PDF files behind a simple object model that allows creation of complex PDF files or import of existing PDF files with a few lines of code. It supports a wide set of features, ranging from simple PDF creation to form filling, content redaction, complex color conversions or digital signatures.
+[**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) is a .NET library for generating and importing PDF documents on the fly from any .NET application. The library does not rely on any Adobe products for creating and importing PDF files. It hides the complex structure of PDF files behind a simple object model that allows creation of complex PDF files or import of existing PDF files with a few lines of code. It supports a wide set of features, ranging from simple PDF creation to form filling, content redaction, complex color conversions or digital signatures.
 
-The [**PDF4NET**](https://o2sol.com/pdf4net.vnext/overview.htm) library can use either a grid based layout approach allowing precise positioning of content on document's pages or a flow based layout making the generation of complex documents a breeze. The final PDF file is compressed, making the library appropriate for web applications. The library can be used from WinForms, ASP.NET, WPF, UWP, .NET Core, Mac, iOS and Android applications without any restrictions, the source code being fully portable between platforms. The library is written entirely in C#, being 100% managed.
+The [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) library can use either a grid based layout approach allowing precise positioning of content on document's pages or a flow based layout making the generation of complex documents a breeze. The final PDF file is compressed, making the library appropriate for web applications. The library can be used from WinForms, ASP.NET, WPF, UWP, .NET Core, Mac, iOS and Android applications without any restrictions, the source code being fully portable between platforms. The library is written entirely in C#, being 100% managed.
 
-The [**PDF4NET**](https://o2sol.com/pdf4net.vnext/overview.htm) library is licensed per developer and can be distributed ROYALTY FREE, reducing your project costs.
+The [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) library is licensed per developer and can be distributed ROYALTY FREE, reducing your project costs.
 
-The main features of [**PDF4NET**](https://o2sol.com/pdf4net.vnext/overview.htm) library are outlined below:
+The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) library are outlined below:
 
 ##### SUPPORTED PLATFORMS	 
   - .NET 4.x	
@@ -257,9 +257,9 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net.vnext/overview.htm)
 
 ##### CLASS REFERENCE
 
-[**PDF4NET**](https://o2sol.com/pdf4net.vnext/overview.htm) class reference is available here: [PDF4NET Class Reference](https://o2sol.com/pdf4net.vnext/help/pdf4net/webframe.html)
+[**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) class reference is available here: [PDF4NET Class Reference](https://o2sol.com/pdf4net/help/pdf4net/webframe.html)
 
-The classic Hello PDF sample looks like this with [**PDF4NET**](https://o2sol.com/pdf4net.vnext/overview.htm):
+The classic Hello PDF sample looks like this with [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm):
 ```
 PDFFixedDocument document = new PDFFixedDocument();
 PDFPage page = document.Pages.Add();
