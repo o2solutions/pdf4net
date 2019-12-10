@@ -1,0 +1,1 @@
+The Reference folder contains basic [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) samples, each one demonstrating a specific [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) feature.
