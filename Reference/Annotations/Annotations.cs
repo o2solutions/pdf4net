@@ -130,7 +130,7 @@ namespace O2S.Components.PDF4NET.Samples
             square1.Contents = "Square annotation with red border";
             square1.BorderColor = new PDFRgbColor(255, 0, 0);
             square1.BorderWidth = 3;
-            square1.VisualRectangle = new PDFDisplayRectangle(50, 70, 250, 150);
+            square1.DisplayRectangle = new PDFDisplayRectangle(50, 70, 250, 150);
 
             PDFSquareAnnotation square2 = new PDFSquareAnnotation();
             page.Annotations.Add(square2);
@@ -139,7 +139,7 @@ namespace O2S.Components.PDF4NET.Samples
             square2.BorderColor = null;
             square2.BorderWidth = 0;
             square2.InteriorColor = new PDFRgbColor(0, 0, 192);
-            square2.VisualRectangle = new PDFDisplayRectangle(50, 270, 250, 150);
+            square2.DisplayRectangle = new PDFDisplayRectangle(50, 270, 250, 150);
 
             PDFSquareAnnotation square3 = new PDFSquareAnnotation();
             page.Annotations.Add(square3);
@@ -148,7 +148,7 @@ namespace O2S.Components.PDF4NET.Samples
             square3.BorderColor = new PDFRgbColor(255, 255, 0);
             square3.BorderWidth = 3;
             square3.InteriorColor = new PDFRgbColor(0, 192, 0);
-            square3.VisualRectangle = new PDFDisplayRectangle(50, 470, 250, 150);
+            square3.DisplayRectangle = new PDFDisplayRectangle(50, 470, 250, 150);
 
             page.Canvas.DrawString("Circle annotations", font, blackBrush, 50, 350);
 
@@ -158,7 +158,7 @@ namespace O2S.Components.PDF4NET.Samples
             circle1.Contents = "Circle annotation with red border";
             circle1.BorderColor = new PDFRgbColor(255, 0, 0);
             circle1.BorderWidth = 3;
-            circle1.VisualRectangle = new PDFDisplayRectangle(350, 70, 250, 150);
+            circle1.DisplayRectangle = new PDFDisplayRectangle(350, 70, 250, 150);
 
             PDFCircleAnnotation circle2 = new PDFCircleAnnotation();
             page.Annotations.Add(circle2);
@@ -167,7 +167,7 @@ namespace O2S.Components.PDF4NET.Samples
             circle2.BorderColor = null;
             circle2.BorderWidth = 0;
             circle2.InteriorColor = new PDFRgbColor(0, 0, 192);
-            circle2.VisualRectangle = new PDFDisplayRectangle(350, 270, 250, 150);
+            circle2.DisplayRectangle = new PDFDisplayRectangle(350, 270, 250, 150);
 
             PDFCircleAnnotation circle3 = new PDFCircleAnnotation();
             page.Annotations.Add(circle3);
@@ -176,7 +176,7 @@ namespace O2S.Components.PDF4NET.Samples
             circle3.BorderColor = new PDFRgbColor(255, 255, 0);
             circle3.BorderWidth = 3;
             circle3.InteriorColor = new PDFRgbColor(0, 192, 0);
-            circle3.VisualRectangle = new PDFDisplayRectangle(350, 470, 250, 150);
+            circle3.DisplayRectangle = new PDFDisplayRectangle(350, 470, 250, 150);
         }
 
         private static void CreateFileAttachmentAnnotations(PDFFixedDocument document, PDFFont font)
@@ -399,7 +399,7 @@ namespace O2S.Components.PDF4NET.Samples
                 rsa.Contents = "I am a " + rubberStampAnnotationNames[i] + " rubber stamp annotation.";
                 rsa.StampName = rubberStampAnnotationNames[i];
                 page.Annotations.Add(rsa);
-                rsa.VisualRectangle = new PDFDisplayRectangle(50, 70 + 50 * i, 200, 40);
+                rsa.DisplayRectangle = new PDFDisplayRectangle(50, 70 + 50 * i, 200, 40);
                 page.Canvas.DrawString(rubberStampAnnotationNames[i], font, blackBrush, 270, 85 + 50 * i);
             }
 
@@ -408,7 +408,7 @@ namespace O2S.Components.PDF4NET.Samples
             customRubberStampAnnotation.Contents = "Rubber stamp annotation with custom appearance.";
             customRubberStampAnnotation.StampName = "Custom";
             page.Annotations.Add(customRubberStampAnnotation);
-            customRubberStampAnnotation.VisualRectangle = new PDFDisplayRectangle(350, 70, 200, 40);
+            customRubberStampAnnotation.DisplayRectangle = new PDFDisplayRectangle(350, 70, 200, 40);
 
             PDFAnnotationAppearance customAppearance = new PDFAnnotationAppearance(50, 50);
             PDFPen redPen = new PDFPen(new PDFRgbColor(255, 0, 0), 10);
@@ -444,7 +444,7 @@ namespace O2S.Components.PDF4NET.Samples
             {
                 PDFTextMarkupAnnotation tma = new PDFTextMarkupAnnotation();
                 page.Annotations.Add(tma);
-                tma.VisualRectangle = new PDFDisplayRectangle(50, 100 + 50 * i, 200, font.Size + 2);
+                tma.DisplayRectangle = new PDFDisplayRectangle(50, 100 + 50 * i, 200, font.Size + 2);
                 tma.TextMarkupType = tmat[i];
 
                 slo.X = 150;
@@ -467,7 +467,7 @@ namespace O2S.Components.PDF4NET.Samples
 
             PDFRichMediaAnnotation rma = new PDFRichMediaAnnotation();
             page.Annotations.Add(rma);
-            rma.VisualRectangle = new PDFDisplayRectangle(100, 100, 400, 400);
+            rma.DisplayRectangle = new PDFDisplayRectangle(100, 100, 400, 400);
             rma.FlashPayload = flashContent;
             rma.FlashFile = "clock.swf";
             rma.ActivationCondition = PDFRichMediaActivationCondition.PageVisible;
@@ -550,7 +550,7 @@ namespace O2S.Components.PDF4NET.Samples
             _3da.NormalAppearance = appearance;
 
             page.Annotations.Add(_3da);
-            _3da.VisualRectangle = new PDFDisplayRectangle(36, 36, 720, 540);
+            _3da.DisplayRectangle = new PDFDisplayRectangle(36, 36, 720, 540);
 
             PDFStringAppearanceOptions sao = new PDFStringAppearanceOptions();
             sao.Font = font;
@@ -571,7 +571,7 @@ namespace O2S.Components.PDF4NET.Samples
             gotoTopView.TargetAnnotation = _3da;
             PDFLinkAnnotation linkGotoTopView = new PDFLinkAnnotation();
             page.Annotations.Add(linkGotoTopView);
-            linkGotoTopView.VisualRectangle = new PDFDisplayRectangle(50, 585, 120, 18);
+            linkGotoTopView.DisplayRectangle = new PDFDisplayRectangle(50, 585, 120, 18);
             linkGotoTopView.Action = gotoTopView;
 
             page.Canvas.DrawRectangle(blackPen, 190, 585, 120, 18);
@@ -583,7 +583,7 @@ namespace O2S.Components.PDF4NET.Samples
             gotoSideView.TargetAnnotation = _3da;
             PDFLinkAnnotation linkGotoSideView = new PDFLinkAnnotation();
             page.Annotations.Add(linkGotoSideView);
-            linkGotoSideView.VisualRectangle = new PDFDisplayRectangle(190, 585, 120, 18);
+            linkGotoSideView.DisplayRectangle = new PDFDisplayRectangle(190, 585, 120, 18);
             linkGotoSideView.Action = gotoSideView;
 
             page.Canvas.DrawRectangle(blackPen, 330, 585, 120, 18);
@@ -595,7 +595,7 @@ namespace O2S.Components.PDF4NET.Samples
             gotoIsometricView.TargetAnnotation = _3da;
             PDFLinkAnnotation linkGotoIsometricView = new PDFLinkAnnotation();
             page.Annotations.Add(linkGotoIsometricView);
-            linkGotoIsometricView.VisualRectangle = new PDFDisplayRectangle(330, 585, 120, 18);
+            linkGotoIsometricView.DisplayRectangle = new PDFDisplayRectangle(330, 585, 120, 18);
             linkGotoIsometricView.Action = gotoIsometricView;
 
             page.Canvas.DrawRectangle(blackPen, 470, 585, 120, 18);
@@ -607,7 +607,7 @@ namespace O2S.Components.PDF4NET.Samples
             gotoFrontView.TargetAnnotation = _3da;
             PDFLinkAnnotation linkGotoFrontView = new PDFLinkAnnotation();
             page.Annotations.Add(linkGotoFrontView);
-            linkGotoFrontView.VisualRectangle = new PDFDisplayRectangle(470, 585, 120, 18);
+            linkGotoFrontView.DisplayRectangle = new PDFDisplayRectangle(470, 585, 120, 18);
             linkGotoFrontView.Action = gotoFrontView;
 
             page.Canvas.DrawRectangle(blackPen, 610, 585, 120, 18);
@@ -619,7 +619,7 @@ namespace O2S.Components.PDF4NET.Samples
             gotoBackView.TargetAnnotation = _3da;
             PDFLinkAnnotation linkGotoBackView = new PDFLinkAnnotation();
             page.Annotations.Add(linkGotoBackView);
-            linkGotoBackView.VisualRectangle = new PDFDisplayRectangle(610, 585, 120, 18);
+            linkGotoBackView.DisplayRectangle = new PDFDisplayRectangle(610, 585, 120, 18);
             linkGotoBackView.Action = gotoBackView;
         }
 
@@ -657,7 +657,7 @@ namespace O2S.Components.PDF4NET.Samples
             redactionAnnotation.BorderColor = new PDFRgbColor(192, 0, 0);
             redactionAnnotation.BorderWidth = 1;
             redactionAnnotation.OverlayAppearance = redactionAppearance;
-            redactionAnnotation.VisualRectangle = new PDFDisplayRectangle(50, 100, 250, 150);
+            redactionAnnotation.DisplayRectangle = new PDFDisplayRectangle(50, 100, 250, 150);
         }
     }
 }

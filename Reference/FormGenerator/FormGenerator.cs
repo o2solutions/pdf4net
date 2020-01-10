@@ -28,7 +28,7 @@ namespace O2S.Components.PDF4NET.Samples
             PDFTextBoxField firstNameTextBox = new PDFTextBoxField("firstname");
             page.Fields.Add(firstNameTextBox);
             firstNameTextBox.Widgets[0].Font = helvetica;
-            firstNameTextBox.Widgets[0].VisualRectangle = new PDFDisplayRectangle(150, 45, 200, 20);
+            firstNameTextBox.Widgets[0].DisplayRectangle = new PDFDisplayRectangle(150, 45, 200, 20);
             firstNameTextBox.Widgets[0].BorderColor = PDFRgbColor.Black;
             firstNameTextBox.Widgets[0].BorderWidth = 1;
 
@@ -37,7 +37,7 @@ namespace O2S.Components.PDF4NET.Samples
             PDFTextBoxField lastNameTextBox = new PDFTextBoxField("lastname");
             page.Fields.Add(lastNameTextBox);
             lastNameTextBox.Widgets[0].Font = helvetica;
-            lastNameTextBox.Widgets[0].VisualRectangle = new PDFDisplayRectangle(150, 75, 200, 20);
+            lastNameTextBox.Widgets[0].DisplayRectangle = new PDFDisplayRectangle(150, 75, 200, 20);
             lastNameTextBox.Widgets[0].BorderColor = PDFRgbColor.Black;
             lastNameTextBox.Widgets[0].BorderWidth = 1;
 
@@ -53,14 +53,14 @@ namespace O2S.Components.PDF4NET.Samples
             page.Canvas.DrawString("Male", helvetica, brush, 180, 110);
             maleRadioItem.ExportValue = "M";
             maleRadioItem.CheckStyle = PDFCheckStyle.Circle;
-            maleRadioItem.VisualRectangle = new PDFDisplayRectangle(150, 105, 20, 20);
+            maleRadioItem.DisplayRectangle = new PDFDisplayRectangle(150, 105, 20, 20);
             maleRadioItem.BorderColor = PDFRgbColor.Black;
             maleRadioItem.BorderWidth = 1;
 
             page.Canvas.DrawString("Female", helvetica, brush, 280, 110);
             femaleRadioItem.ExportValue = "F";
             femaleRadioItem.CheckStyle = PDFCheckStyle.Circle;
-            femaleRadioItem.VisualRectangle = new PDFDisplayRectangle(250, 105, 20, 20);
+            femaleRadioItem.DisplayRectangle = new PDFDisplayRectangle(250, 105, 20, 20);
             femaleRadioItem.BorderColor = PDFRgbColor.Black;
             femaleRadioItem.BorderWidth = 1;
 
@@ -79,7 +79,7 @@ namespace O2S.Components.PDF4NET.Samples
             firstCarList.Items.Add(new PDFListItem("Acura", "Acura"));
             page.Fields.Add(firstCarList);
             firstCarList.Widgets[0].Font = helvetica;
-            firstCarList.Widgets[0].VisualRectangle = new PDFDisplayRectangle(150, 135, 200, 20);
+            firstCarList.Widgets[0].DisplayRectangle = new PDFDisplayRectangle(150, 135, 200, 20);
             firstCarList.Widgets[0].BorderColor = PDFRgbColor.Black;
             firstCarList.Widgets[0].BorderWidth = 1;
 
@@ -98,7 +98,7 @@ namespace O2S.Components.PDF4NET.Samples
             secondCarList.Items.Add(new PDFListItem("Acura", "Acura"));
             page.Fields.Add(secondCarList);
             secondCarList.Widgets[0].Font = helvetica;
-            secondCarList.Widgets[0].VisualRectangle = new PDFDisplayRectangle(150, 165, 200, 60);
+            secondCarList.Widgets[0].DisplayRectangle = new PDFDisplayRectangle(150, 165, 200, 60);
             secondCarList.Widgets[0].BorderColor = PDFRgbColor.Black;
             secondCarList.Widgets[0].BorderWidth = 1;
 
@@ -109,7 +109,7 @@ namespace O2S.Components.PDF4NET.Samples
             agreeCheckBox.Widgets[0].Font = helvetica;
             (agreeCheckBox.Widgets[0] as PDFCheckWidget).ExportValue = "YES";
             (agreeCheckBox.Widgets[0] as PDFCheckWidget).CheckStyle = PDFCheckStyle.Check;
-            agreeCheckBox.Widgets[0].VisualRectangle = new PDFDisplayRectangle(150, 235, 20, 20);
+            agreeCheckBox.Widgets[0].DisplayRectangle = new PDFDisplayRectangle(150, 235, 20, 20);
             agreeCheckBox.Widgets[0].BorderColor = PDFRgbColor.Black;
             agreeCheckBox.Widgets[0].BorderWidth = 1;
 
@@ -118,12 +118,12 @@ namespace O2S.Components.PDF4NET.Samples
             PDFSignatureField signHereField = new PDFSignatureField("signhere");
             page.Fields.Add(signHereField);
             signHereField.Widgets[0].Font = helvetica;
-            signHereField.Widgets[0].VisualRectangle = new PDFDisplayRectangle(150, 265, 200, 60);
+            signHereField.Widgets[0].DisplayRectangle = new PDFDisplayRectangle(150, 265, 200, 60);
 
             // Submit form
             PDFPushButtonField submitBtn = new PDFPushButtonField("submit");
             page.Fields.Add(submitBtn);
-            submitBtn.Widgets[0].VisualRectangle = new PDFDisplayRectangle(450, 45, 150, 30);
+            submitBtn.Widgets[0].DisplayRectangle = new PDFDisplayRectangle(450, 45, 150, 30);
             (submitBtn.Widgets[0] as PDFPushButtonWidget).Caption = "Submit form";
             submitBtn.Widgets[0].BackgroundColor = PDFRgbColor.LightGray;
             PDFSubmitFormAction submitFormAction = new PDFSubmitFormAction();
@@ -142,7 +142,7 @@ namespace O2S.Components.PDF4NET.Samples
             // Reset form
             PDFPushButtonField resetBtn = new PDFPushButtonField("reset");
             page.Fields.Add(resetBtn);
-            resetBtn.Widgets[0].VisualRectangle = new PDFDisplayRectangle(450, 85, 150, 30);
+            resetBtn.Widgets[0].DisplayRectangle = new PDFDisplayRectangle(450, 85, 150, 30);
             (resetBtn.Widgets[0] as PDFPushButtonWidget).Caption = "Reset form";
             resetBtn.Widgets[0].BackgroundColor = PDFRgbColor.LightGray;
             PDFResetFormAction resetFormAction = new PDFResetFormAction();
@@ -151,7 +151,7 @@ namespace O2S.Components.PDF4NET.Samples
             // Print form
             PDFPushButtonField printBtn = new PDFPushButtonField("print");
             page.Fields.Add(printBtn);
-            printBtn.Widgets[0].VisualRectangle = new PDFDisplayRectangle(450, 125, 150, 30);
+            printBtn.Widgets[0].DisplayRectangle = new PDFDisplayRectangle(450, 125, 150, 30);
             (printBtn.Widgets[0] as PDFPushButtonWidget).Caption = "Print form";
             printBtn.Widgets[0].BackgroundColor = PDFRgbColor.LightGray;
             PDFJavaScriptAction printAction = new PDFJavaScriptAction();

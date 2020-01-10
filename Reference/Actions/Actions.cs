@@ -79,7 +79,7 @@ namespace O2S.Components.PDF4NET.Samples
                 // Create a link annotation on top of the widget.
                 PDFLinkAnnotation link = new PDFLinkAnnotation();
                 document.Pages[i].Annotations.Add(link);
-                link.VisualRectangle = new PDFDisplayRectangle(400, 40, 200, 20);
+                link.DisplayRectangle = new PDFDisplayRectangle(400, 40, 200, 20);
 
                 // Create a named action and attach it to the link.
                 PDFNamedAction namedAction = new PDFNamedAction();
@@ -96,7 +96,7 @@ namespace O2S.Components.PDF4NET.Samples
                 // Create a link annotation on top of the widget.
                 link = new PDFLinkAnnotation();
                 document.Pages[i].Annotations.Add(link);
-                link.VisualRectangle = new PDFDisplayRectangle(400, 80, 200, 20);
+                link.DisplayRectangle = new PDFDisplayRectangle(400, 80, 200, 20);
 
                 // Create a named action and attach it to the link.
                 namedAction = new PDFNamedAction();
@@ -113,7 +113,7 @@ namespace O2S.Components.PDF4NET.Samples
                 // Create a link annotation on top of the widget.
                 link = new PDFLinkAnnotation();
                 document.Pages[i].Annotations.Add(link);
-                link.VisualRectangle = new PDFDisplayRectangle(400, 120, 200, 20);
+                link.DisplayRectangle = new PDFDisplayRectangle(400, 120, 200, 20);
 
                 // Create a named action and attach it to the link.
                 namedAction = new PDFNamedAction();
@@ -130,7 +130,7 @@ namespace O2S.Components.PDF4NET.Samples
                 // Create a link annotation on top of the widget.
                 link = new PDFLinkAnnotation();
                 document.Pages[i].Annotations.Add(link);
-                link.VisualRectangle = new PDFDisplayRectangle(400, 160, 200, 20);
+                link.DisplayRectangle = new PDFDisplayRectangle(400, 160, 200, 20);
 
                 // Create a named action and attach it to the link.
                 namedAction = new PDFNamedAction();
@@ -147,7 +147,7 @@ namespace O2S.Components.PDF4NET.Samples
                 // Create a link annotation on top of the widget.
                 link = new PDFLinkAnnotation();
                 document.Pages[i].Annotations.Add(link);
-                link.VisualRectangle = new PDFDisplayRectangle(400, 200, 200, 20);
+                link.DisplayRectangle = new PDFDisplayRectangle(400, 200, 200, 20);
 
                 // Create a named action and attach it to the link.
                 namedAction = new PDFNamedAction();
@@ -184,7 +184,7 @@ namespace O2S.Components.PDF4NET.Samples
                 // Create a link annotation on top of the widget.
                 PDFLinkAnnotation link = new PDFLinkAnnotation();
                 document.Pages[i].Annotations.Add(link);
-                link.VisualRectangle = new PDFDisplayRectangle(400, 260, 200, 20);
+                link.DisplayRectangle = new PDFDisplayRectangle(400, 260, 200, 20);
 
                 // Create a GoTo action and attach it to the link.
                 PDFPageDirectDestination pageDestination = new PDFPageDirectDestination();
@@ -226,7 +226,7 @@ namespace O2S.Components.PDF4NET.Samples
                 // Create a link annotation on top of the widget.
                 PDFLinkAnnotation link = new PDFLinkAnnotation();
                 document.Pages[i].Annotations.Add(link);
-                link.VisualRectangle = new PDFDisplayRectangle(400, 320, 200, 20);
+                link.DisplayRectangle = new PDFDisplayRectangle(400, 320, 200, 20);
 
                 // Create a GoToR action and attach it to the link.
                 PDFPageNumberDestination pageDestination = new PDFPageNumberDestination();
@@ -266,7 +266,7 @@ namespace O2S.Components.PDF4NET.Samples
                 // Create a link annotation on top of the widget.
                 PDFLinkAnnotation link = new PDFLinkAnnotation();
                 document.Pages[i].Annotations.Add(link);
-                link.VisualRectangle = new PDFDisplayRectangle(400, 380, 200, 20);
+                link.DisplayRectangle = new PDFDisplayRectangle(400, 380, 200, 20);
 
                 // Create a launch action and attach it to the link.
                 PDFLaunchAction launchAction = new PDFLaunchAction();
@@ -300,7 +300,7 @@ namespace O2S.Components.PDF4NET.Samples
                 // Create a link annotation on top of the widget.
                 PDFLinkAnnotation link = new PDFLinkAnnotation();
                 document.Pages[i].Annotations.Add(link);
-                link.VisualRectangle = new PDFDisplayRectangle(400, 440, 200, 20);
+                link.DisplayRectangle = new PDFDisplayRectangle(400, 440, 200, 20);
 
                 // Create an uri action and attach it to the link.
                 PDFUriAction uriAction = new PDFUriAction();
@@ -334,7 +334,7 @@ namespace O2S.Components.PDF4NET.Samples
                 // Create a link annotation on top of the widget.
                 PDFLinkAnnotation link = new PDFLinkAnnotation();
                 document.Pages[i].Annotations.Add(link);
-                link.VisualRectangle = new PDFDisplayRectangle(400, 500, 200, 20);
+                link.DisplayRectangle = new PDFDisplayRectangle(400, 500, 200, 20);
 
                 // Create a Javascript action and attach it to the link.
                 PDFJavaScriptAction jsAction = new PDFJavaScriptAction();
