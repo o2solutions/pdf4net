@@ -63,6 +63,7 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
   - Attribute classes	
   - PDF/UA-1	
   - Automatic tagging of flow documents	
+  - Extraction of page content with associated logical structure information
  
 ##### FLOW DOCUMENT FEATURES	 
  
