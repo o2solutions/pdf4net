@@ -66,7 +66,7 @@ namespace O2S.Components.PDF4NET.Samples
 
             // First car
             page.Canvas.DrawString("First car:", helvetica, brush, 50, 140);
-            PDFComboBoxField firstCarList = new PDFComboBoxField("firstcar");
+            PDFDropDownListField firstCarList = new PDFDropDownListField("firstcar");
             firstCarList.Items.Add(new PDFListItem("Mercedes", "Mercedes"));
             firstCarList.Items.Add(new PDFListItem("BMW", "BMW"));
             firstCarList.Items.Add(new PDFListItem("Audi", "Audi"));
