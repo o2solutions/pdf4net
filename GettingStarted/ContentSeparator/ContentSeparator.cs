@@ -3,6 +3,7 @@ using O2S.Components.PDF4NET.Graphics.Operators;
 using O2S.Components.PDF4NET.Transforms;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace O2S.Components.PDF4NET.Samples
 {
@@ -262,7 +263,7 @@ namespace O2S.Components.PDF4NET.Samples
 
         private void PerformSeparation(string outputPdfFile, bool keepSeparation)
         {
-			FileStream input = File.OpenRead(pdfFile)
+            FileStream input = File.OpenRead(pdfFile);
             PDFFixedDocument document = new PDFFixedDocument(input);
             input.Close();
 
