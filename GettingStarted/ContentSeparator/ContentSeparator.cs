@@ -222,6 +222,17 @@ namespace O2S.Components.PDF4NET.Samples
                         op = null;
                     }
                     break;
+                case PDFContentStreamOperatorType.SetShading:
+                    PDFSetShadingOperator sso = input as PDFSetShadingOperator;
+                    PDFSeparationColorSpace shadingSepCs = sso.Shading.ColorSpace as PDFSeparationColorSpace;
+                    bool isShadingSeparationActive = (shadingSepCs != null) && (shadingSepCs.Colorant == separationName);
+                    if ((isShadingSeparationActive && !keepSeparation) ||
+                        (!isShadingSeparationActive && keepSeparation))
+                    {
+                        op = null;
+                    }
+
+                    break;
             }
 
             if (op != null)
