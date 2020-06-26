@@ -101,7 +101,7 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
   - Load digital signatures from signed PDF files	Yes
   - Decode existing signatures into basic ASN.1 blocks	Yes
   - Extract the certificate from digital signatures	Yes
-  - Save the signed copy of a PDF document
+  - Save the signed copy of a PDF document 
 
 ##### GRAPHICS FEATURES	 
  
