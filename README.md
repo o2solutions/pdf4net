@@ -98,7 +98,11 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
   - LTV (Long Term Validation) enabled digital signatures	
   - Support for hardware signature tokens/smartcards (Windows, WPF, Mac)	
   - Externally computed signatures	
- 
+  - Load digital signatures from signed PDF files	Yes
+  - Decode existing signatures into basic ASN.1 blocks	Yes
+  - Extract the certificate from digital signatures	Yes
+  - Save the signed copy of a PDF document
+
 ##### GRAPHICS FEATURES	 
  
   - Grid layout for fixed content positioning	
