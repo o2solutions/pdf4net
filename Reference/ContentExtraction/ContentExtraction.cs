@@ -47,8 +47,8 @@ namespace O2S.Components.PDF4NET.Samples
             byte[] rgb = new byte[3];
 
             PDFContentExtractor ce = new PDFContentExtractor(document.Pages[0]);
-            PDFTextFragmentCollection tfc = ce.ExtractTextFragments();
-            for (int i = 0; i < tfc.Count; i++)
+            PDFTextRunCollection trc = ce.ExtractTextRuns();
+            for (int i = 0; i < trc.Count; i++) 
             {
                 rnd.NextBytes(rgb);
                 penColor.R = rgb[0];
@@ -56,10 +56,10 @@ namespace O2S.Components.PDF4NET.Samples
                 penColor.B = rgb[2];
 
                 PDFPath boundingPath = new PDFPath();
-                boundingPath.StartSubpath(tfc[i].FragmentCorners[0].X, tfc[i].FragmentCorners[0].Y);
-                boundingPath.AddLineTo(tfc[i].FragmentCorners[1].X, tfc[i].FragmentCorners[1].Y);
-                boundingPath.AddLineTo(tfc[i].FragmentCorners[2].X, tfc[i].FragmentCorners[2].Y);
-                boundingPath.AddLineTo(tfc[i].FragmentCorners[3].X, tfc[i].FragmentCorners[3].Y);
+                boundingPath.StartSubpath(trc[i].Corners[0].X, trc[i].Corners[0].Y);
+                boundingPath.AddLineTo(trc[i].Corners[1].X, trc[i].Corners[1].Y);
+                boundingPath.AddLineTo(trc[i].Corners[2].X, trc[i].Corners[2].Y);
+                boundingPath.AddLineTo(trc[i].Corners[3].X, trc[i].Corners[3].Y);
                 boundingPath.CloseSubpath();
 
                 document.Pages[0].Canvas.DrawPath(pen, boundingPath);
@@ -78,9 +78,9 @@ namespace O2S.Components.PDF4NET.Samples
             byte[] rgb = new byte[3];
 
             PDFContentExtractor ce = new PDFContentExtractor(document.Pages[1]);
-            PDFTextFragmentCollection tfc = ce.ExtractTextFragments();
-            PDFTextFragment tf = tfc[1];
-            for (int i = 0; i < tf.Glyphs.Count; i++)
+            PDFTextRunCollection trc = ce.ExtractTextRuns();
+            PDFTextRun tr = trc[1];
+            for (int i = 0; i < tr.Glyphs.Count; i++)
             {
                 rnd.NextBytes(rgb);
                 penColor.R = rgb[0];
@@ -88,10 +88,10 @@ namespace O2S.Components.PDF4NET.Samples
                 penColor.B = rgb[2];
 
                 PDFPath boundingPath = new PDFPath();
-                boundingPath.StartSubpath(tf.Glyphs[i].GlyphCorners[0].X, tf.Glyphs[i].GlyphCorners[0].Y);
-                boundingPath.AddLineTo(tf.Glyphs[i].GlyphCorners[1].X, tf.Glyphs[i].GlyphCorners[1].Y);
-                boundingPath.AddLineTo(tf.Glyphs[i].GlyphCorners[2].X, tf.Glyphs[i].GlyphCorners[2].Y);
-                boundingPath.AddLineTo(tf.Glyphs[i].GlyphCorners[3].X, tf.Glyphs[i].GlyphCorners[3].Y);
+                boundingPath.StartSubpath(tr.Glyphs[i].GlyphCorners[0].X, tr.Glyphs[i].GlyphCorners[0].Y);
+                boundingPath.AddLineTo(tr.Glyphs[i].GlyphCorners[1].X, tr.Glyphs[i].GlyphCorners[1].Y);
+                boundingPath.AddLineTo(tr.Glyphs[i].GlyphCorners[2].X, tr.Glyphs[i].GlyphCorners[2].Y);
+                boundingPath.AddLineTo(tr.Glyphs[i].GlyphCorners[3].X, tr.Glyphs[i].GlyphCorners[3].Y);
                 boundingPath.CloseSubpath();
 
                 document.Pages[1].Canvas.DrawPath(pen, boundingPath);
