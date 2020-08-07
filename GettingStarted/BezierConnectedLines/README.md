@@ -6,5 +6,5 @@ The algorithm returns 5 points for the first 3 points in the input list, points 
 
 The image below shows the same set of lines connected through Bezier curves using various smooth factors.
 
-![Bezier connected lines](https://github.com/o2solutions/pdf4net/tree/master/GettingStarted/BezierConnectedLines/BezierConnectedLines.gif)
+![Bezier connected lines](https://github.com/o2solutions/pdf4net/blob/master/GettingStarted/BezierConnectedLines/BezierConnectedLines.gif)
  
