@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using O2S.Components.PDF4NET;
 using O2S.Components.PDF4NET.Graphics;
-using O2S.Components.PDF4NET.Canvas.Text;
+using O2S.Components.PDF4NET.Graphics.Text;
 
 namespace O2S.Components.PDF4NET.Samples
 {
@@ -340,7 +340,7 @@ namespace O2S.Components.PDF4NET.Samples
             sao.Pen = null;
             sao.Brush = brush;
             page.Canvas.DrawString("A B C", sao, slo);
-            DrawHorizontalLines(page.Graphics, redPen, slo.X, slo.Y, 250, 70);
+            DrawHorizontalLines(page.Canvas, redPen, slo.X, slo.Y, 250, 70);
             page.Canvas.RestoreGraphicsState();
 
             // Stroke and clip text - text outline is stroked and then text outline is added to current clipping path.
@@ -350,7 +350,7 @@ namespace O2S.Components.PDF4NET.Samples
             sao.Pen = redPen;
             sao.Brush = null;
             page.Canvas.DrawString("A B C", sao, slo);
-            DrawHorizontalLines(page.Graphics, redPen, slo.X, slo.Y, 250, 70);
+            DrawHorizontalLines(page.Canvas, redPen, slo.X, slo.Y, 250, 70);
             page.Canvas.RestoreGraphicsState();
 
             // Fill, Stroke and clip text - text interior is filled, text outline is stroked and then text outline is added to current clipping path.
@@ -360,7 +360,7 @@ namespace O2S.Components.PDF4NET.Samples
             sao.Pen = redPen;
             sao.Brush = brush;
             page.Canvas.DrawString("A B C", sao, slo);
-            DrawHorizontalLines(page.Graphics, redPen, slo.X, slo.Y, 250, 70);
+            DrawHorizontalLines(page.Canvas, redPen, slo.X, slo.Y, 250, 70);
             page.Canvas.RestoreGraphicsState();
 
             // Clip text - text outline is added to current clipping path.
@@ -370,11 +370,11 @@ namespace O2S.Components.PDF4NET.Samples
             sao.Pen = redPen;
             sao.Brush = brush;
             page.Canvas.DrawString("A B C", sao, slo);
-            DrawHorizontalLines(page.Graphics, redPen, slo.X, slo.Y, 250, 70);
+            DrawHorizontalLines(page.Canvas, redPen, slo.X, slo.Y, 250, 70);
             page.Canvas.RestoreGraphicsState();
         }
 
-        private static void DrawHorizontalLines(PDFGraphics g, PDFPen pen, double x, double y, double width, double height)
+        private static void DrawHorizontalLines(PDFCanvas g, PDFPen pen, double x, double y, double width, double height)
         {
             for (double i = 0; i < height; i = i + 5)
             {
