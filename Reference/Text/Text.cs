@@ -7,7 +7,7 @@ using O2S.Components.PDF4NET.Graphics.Text;
 namespace O2S.Components.PDF4NET.Samples
 {
     /// <summary>
-    /// Text sample.
+    /// Text sample.  
     /// </summary>
     public class Text
     {
