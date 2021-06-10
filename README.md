@@ -11,7 +11,8 @@ The [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) library is licensed pe
 The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) library are outlined below:
 
 ##### SUPPORTED PLATFORMS	 
-  - .NET 4.x	
+  - .NET Framework 4.x	
+  - .NET 5
   - Windows Forms	
   - Xamarin.Mac	
   - ASP.NET Webforms and MVC	
