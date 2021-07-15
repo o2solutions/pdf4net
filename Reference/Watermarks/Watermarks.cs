@@ -44,8 +44,8 @@ namespace O2S.Components.PDF4NET.Samples
             PDFBrush redBrush = new PDFBrush(new PDFRgbColor(192, 0, 0));
             PDFStandardFont helvetica = new PDFStandardFont(PDFStandardFontFace.HelveticaBold, 36);
 
-            // Set the page graphics to be located under existing page content.
-            page.SetGraphicsPosition(PDFPageGraphicsPosition.UnderExistingPageContent);
+            // Set the page canvas to be located under existing page content.
+            page.SetCanvasPosition(PDFPageCanvasPosition.UnderExistingPageContent);
 
             PDFStringAppearanceOptions sao = new PDFStringAppearanceOptions();
             sao.Brush = redBrush;
@@ -66,8 +66,8 @@ namespace O2S.Components.PDF4NET.Samples
             PDFBrush redBrush = new PDFBrush(new PDFRgbColor(192, 0, 0));
             PDFStandardFont helvetica = new PDFStandardFont(PDFStandardFontFace.HelveticaBold, 32);
 
-            // The page graphics is located by default on top of existing page content.
-            //page.SetGraphicsPosition(PDFPageGraphicsPosition.OverExistingPageContent);
+            // The page canvas is located by default on top of existing page content.
+            //page.SetCanvasPosition(PDFPageCanvasPosition.OverExistingPageContent);
 
             // Draw the watermark over page content.
             // Page content under the watermark will be masked.
