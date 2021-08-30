@@ -256,6 +256,26 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
   - Add, edit and remove COS objects	
   - Supported COS objects: strings, numbers, names, booleans, nulls,
   arrays, dictionaries and streams	
+
+##### PDF RENDERING (included in PDF4NET+Render package)	 
+ 
+  - Convert PDF pages to color, grayscale and black & white images
+  - Convert PDF pages to RAW, PNG and TIFF (single and multi-page)
+  - Native RGBA, BGRA, ARGB, RGB, BGR and Grayscale rendering
+  - Built-in graphic engine that produces pixel matched results across all supported platforms
+  - Selective content rendering: text and/or vector graphics and/or images and/or form fields and/or annotations
+  - Supported PDF features:
+      - Stroked and filled vector graphics
+      - Clipping paths including text based clipping paths
+      - Text (all text rendering modes)
+      - Fonts (standard PDF fonts, embedded fonts, TrueType, Type1, Type3)
+      - Images (RAW, DCT/JPEG, CCITT, JPEG2000, JBIG2, inline) with associated masks if present
+      - Colorspaces (RGB, CMYK, Gray, CalRGB, CalGray, Lab, ICC, Separation, DeviceN, Indexed)
+      - Graphics state soft masks
+      - Transparency groups
+      - Blend modes
+      - PDF patterns
+      - PDF shadings (gradients)
  
 ##### LICENSING	 
  
