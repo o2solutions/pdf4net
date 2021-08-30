@@ -1,0 +1,1 @@
+The `SelectiveContentRendering` sample shows how to convert a PDF page to image and include only some of the content. The rendering settings allow to exclude the following elements: cevtor graphics, text, images, form fields and annotations.
