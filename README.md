@@ -12,7 +12,7 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
 
 ##### SUPPORTED PLATFORMS	 
   - .NET Framework 4.x	
-  - .NET 5
+  - .NET 5 / 6
   - Windows Forms	
   - Xamarin.Mac	
   - ASP.NET Webforms and MVC	
@@ -23,10 +23,9 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
   - Xamarin.iOS	
   - Xamarin.Android	
   - Xamarin.Forms	
-  - Portable Class Library	
   - Universal Windows Platform	
-  - .NET Core	
-  - .NET Standard	
+  - .NET Core 2.x / 3.x
+  - .NET Standard
 
 ##### DOCUMENT FEATURES	 
  
