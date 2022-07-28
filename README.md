@@ -260,6 +260,7 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
  
   - Convert PDF pages to color, grayscale and black & white images
   - Convert PDF pages to RAW, PNG and TIFF (single and multi-page)
+  - Convert PDF pages to images up to 32bpp 65536x65536 pixels
   - Native RGBA, BGRA, ARGB, RGB, BGR and Grayscale rendering
   - Built-in graphic engine that produces pixel matched results across all supported platforms
   - Selective content rendering: text and/or vector graphics and/or images and/or form fields and/or annotations
