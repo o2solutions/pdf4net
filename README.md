@@ -37,7 +37,7 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
   - PDF structure compression	
   - Document information and custom properties	
   - Document viewer preferences and display modes	
-  - XMP metadata	
+  - Document and page XMP metadata	
   - Document file attachments	
   - Document level Javascripts and actions	
   - Document outline (bookmarks)	
@@ -46,6 +46,7 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
   - Add and remove PDF pages	
   - Page boxes - media box, crop box, art box, trim box and bleed box	
   - Page labeling ranges (page numbering)	
+  - Page user units
   - Extract pages from external PDF files	
   - Append PDF pages	
   - Split PDF files into pages	
