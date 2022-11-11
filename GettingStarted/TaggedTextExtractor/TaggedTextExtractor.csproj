@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="O2S.Components.PDF4NET.NET" Version="12.1.1.5" />
+    <PackageReference Include="O2S.Components.PDF4NET.NET" Version="12.1.1.4" />
   </ItemGroup>
 
 </Project>
