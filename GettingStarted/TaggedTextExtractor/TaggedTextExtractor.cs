@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using O2S.Components.PDF4NET.Content;
 using O2S.Components.PDF4NET.LogicalStructure;
 
@@ -50,7 +48,7 @@ namespace O2S.Components.PDF4NET.Samples
             }
             for (int i = 0; i < rootCollection.Count; i++)
             {
-                CopyContentItemElements(rootCollection[i] as PDFStructureElement, contentItemElements);
+                CopyContentItemElements(rootCollection[i], contentItemElements);
             }
 
             return contentItemElements;
@@ -78,16 +76,18 @@ namespace O2S.Components.PDF4NET.Samples
             }
             else if ((structureElement.Children is PDFStructureElementContentCollection contentCollection) && (contentCollection.Count > 0))
             {
-                // Assume all objects in the collection to be content items
-                if ((contentCollection[0] is PDFMarkedContentReference) ||
-                    (contentCollection[0] is PDFMarkedContentSequenceIdentifier) ||
-                    (contentCollection[0] is PDFObjectReference))
+                bool structureElementAdded = false;
+
+                for (int i = 0; i < contentCollection.Count; i++)
                 {
-                    contentItemElements.Add(structureElement);
-                }
-                else if (contentCollection[0] is PDFStructureElement) // Assume all objects in the collection to be structure elements
-                {
-                    for (int i = 0; i < contentCollection.Count; i++)
+                    if (((contentCollection[i] is PDFMarkedContentReference) ||
+                        (contentCollection[i] is PDFMarkedContentSequenceIdentifier) ||
+                        (contentCollection[i] is PDFObjectReference)) && !structureElementAdded)
+                    {
+                        contentItemElements.Add(structureElement);
+                        structureElementAdded = true;
+                    }
+                    else if (contentCollection[i] is PDFStructureElement)
                     {
                         CopyContentItemElements(contentCollection[i] as PDFStructureElement, contentItemElements);
                     }
