@@ -134,6 +134,12 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
   - Type3 fonts	
   - Ansi and Unicode TrueType fonts with support for font subsetting	
   - Disable text copy/paste for Unicode TrueType fonts	
+  - Full color emojis and SVG fonts	
+  - Advanced TrueType features:	
+    - Ligatures
+    - Vertical glyphs
+    - Small capitals
+    - Old style figures
  
 ##### IMAGES	 
  
