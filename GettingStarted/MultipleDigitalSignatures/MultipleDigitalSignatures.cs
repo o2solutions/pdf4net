@@ -66,7 +66,7 @@ namespace O2S.Components.PDF4NET.Samples
 
             signField = new PDFSignatureField("sign2");
             document.Pages[0].Fields.Add(signField);
-            signField.Widgets[0].VisualRectangle = new PDFDisplayRectangle(150, 350, 200, 60);
+            signField.Widgets[0].DisplayRectangle = new PDFDisplayRectangle(150, 350, 200, 60);
             signature = new PDFCmsDigitalSignature();
             signature.SignatureDigestAlgorithm = PDFDigitalSignatureDigestAlgorithm.Sha256;
             signature.Certificate = certificate;

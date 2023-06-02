@@ -250,7 +250,7 @@ namespace O2S.Components.PDF4NET.Samples
 
             PDFLinkAnnotation link = new PDFLinkAnnotation();
             page.Annotations.Add(link);
-            link.DisplayRectangle = new PDFVisualRectangle(95, 70, 130, 10);
+            link.DisplayRectangle = new PDFDisplayRectangle(95, 70, 130, 10);
             link.HighlightStyle = PDFLinkAnnotationHighlightStyle.Invert;
             link.Contents = "http://www.o2sol.com/";
 
@@ -273,7 +273,7 @@ namespace O2S.Components.PDF4NET.Samples
             PDFTextBoxField fldName = new PDFTextBoxField("name");
             page.Fields.Add(fldName);
             fldName.AlternateName = "Enter your name";
-            fldName.Widgets[0].DisplayRectangle = new PDFVisualRectangle(120, 95, 130, 20);
+            fldName.Widgets[0].DisplayRectangle = new PDFDisplayRectangle(120, 95, 130, 20);
             fldName.Widgets[0].BorderColor = PDFRgbColor.Blue;
             fldName.Widgets[0].BorderWidth = 1;
             fldName.Widgets[0].BackgroundColor = PDFRgbColor.LightBlue;

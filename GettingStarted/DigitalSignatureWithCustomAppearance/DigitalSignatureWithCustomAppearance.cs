@@ -42,7 +42,7 @@ namespace O2S.Components.PDF4NET.Samples
             PDFPngImage signatureImage = new PDFPngImage(signatureImageStream);
             signatureImageStream.Close();
             // Create the signature custom appearance
-            PDFAnnotationAppearance aa = new PDFAnnotationAppearance(signField.Widgets[0].VisualRectangle.Width, signField.Widgets[0].VisualRectangle.Height);
+            PDFAnnotationAppearance aa = new PDFAnnotationAppearance(signField.Widgets[0].DisplayRectangle.Width, signField.Widgets[0].DisplayRectangle.Height);
             aa.Canvas.DrawImage(signatureImage, 0, 0, aa.Width, aa.Height);
             // Set the custom appearance on the signature field
             signField.Widgets[0].NormalAppearance = aa;

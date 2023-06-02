@@ -174,11 +174,13 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
     - Text (sticky notes) annotations	
     - Rubber stamp annotations	
     - Square and circle annotations	
+    - Cloud square annotations	
     - File attachment annotations	
     - Link annotations (hyperlinks)	
     - Line annotations	
     - Ink annotations	
     - Polygon and polyline annotations	
+    - Cloud polygon annotations	
     - Text markup annotations: highlight, underline, strikeout, squiggly	
     - Free text (typewritter) annotations	
     - Sound annotations	

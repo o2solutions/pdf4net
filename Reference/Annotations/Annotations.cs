@@ -5,6 +5,7 @@ using O2S.Components.PDF4NET.Annotations;
 using O2S.Components.PDF4NET.Actions;
 using O2S.Components.PDF4NET.Destinations;
 using System.IO;
+using O2S.Components.PDF4NET.Forms;
 
 namespace O2S.Components.PDF4NET.Samples
 {
@@ -35,6 +36,8 @@ namespace O2S.Components.PDF4NET.Samples
             CreatePolygonAnnotations(document, helvetica);
 
             CreatePolylineAnnotations(document, helvetica);
+
+            CreateCloudAnnotations(document, helvetica);
 
             CreateRubberStampAnnotations(document, helvetica);
 
@@ -74,7 +77,7 @@ namespace O2S.Components.PDF4NET.Samples
                 PDFTextAnnotation ta = new PDFTextAnnotation();
                 ta.Author = "O2S.Components.PDF4NET";
                 ta.Contents = "I am a " + textAnnotationNames[i] + " annotation.";
-                ta.IconName = textAnnotationNames[i];
+                ta.Icon = textAnnotationNames[i];
                 page.Annotations.Add(ta);
                 ta.Location = new PDFPoint(50, 100 + 40 * i);
                 page.Canvas.DrawString(textAnnotationNames[i], font, blackBrush, 90, 100 + 40 * i);
@@ -88,7 +91,7 @@ namespace O2S.Components.PDF4NET.Samples
                 PDFTextAnnotation ta = new PDFTextAnnotation();
                 ta.Author = "O2S.Components.PDF4NET";
                 ta.Contents = "I am a " + textAnnotationNames[i] + " annotation.";
-                ta.IconName = textAnnotationNames[i];
+                ta.Icon = textAnnotationNames[i];
                 rnd.NextBytes(rgb);
                 ta.OutlineColor = new PDFRgbColor(rgb[0], rgb[1], rgb[2]);
                 rnd.NextBytes(rgb);
@@ -103,7 +106,7 @@ namespace O2S.Components.PDF4NET.Samples
             customTextAnnotation.Author = "O2S.Components.PDF4NET";
             customTextAnnotation.Contents = "Text annotation with custom icon.";
             page.Annotations.Add(customTextAnnotation);
-            customTextAnnotation.IconName = "Custom icon appearance";
+            customTextAnnotation.Icon = "Custom icon appearance";
             customTextAnnotation.Location = new PDFPoint(50, 720);
 
             PDFAnnotationAppearance customAppearance = new PDFAnnotationAppearance(50, 50);
@@ -128,16 +131,18 @@ namespace O2S.Components.PDF4NET.Samples
             page.Annotations.Add(square1);
             square1.Author = "PDF4NET";
             square1.Contents = "Square annotation with red border";
-            square1.BorderColor = new PDFRgbColor(255, 0, 0);
-            square1.BorderWidth = 3;
+            square1.Border = new PDFAnnotationBorder();
+            square1.Border.Color = new PDFRgbColor(255, 0, 0);
+            square1.Border.Width = 3;
             square1.DisplayRectangle = new PDFDisplayRectangle(50, 70, 250, 150);
 
             PDFSquareAnnotation square2 = new PDFSquareAnnotation();
             page.Annotations.Add(square2);
             square2.Author = "PDF4NET";
             square2.Contents = "Square annotation with blue interior";
-            square2.BorderColor = null;
-            square2.BorderWidth = 0;
+            square2.Border = new PDFAnnotationBorder();
+            square2.Border.Color = null;
+            square2.Border.Width = 0;
             square2.InteriorColor = new PDFRgbColor(0, 0, 192);
             square2.DisplayRectangle = new PDFDisplayRectangle(50, 270, 250, 150);
 
@@ -145,8 +150,9 @@ namespace O2S.Components.PDF4NET.Samples
             page.Annotations.Add(square3);
             square3.Author = "PDF4NET";
             square3.Contents = "Square annotation with yellow border and green interior";
-            square3.BorderColor = new PDFRgbColor(255, 255, 0);
-            square3.BorderWidth = 3;
+            square3.Border = new PDFAnnotationBorder();
+            square3.Border.Color = new PDFRgbColor(255, 255, 0);
+            square3.Border.Width = 3;
             square3.InteriorColor = new PDFRgbColor(0, 192, 0);
             square3.DisplayRectangle = new PDFDisplayRectangle(50, 470, 250, 150);
 
@@ -156,16 +162,18 @@ namespace O2S.Components.PDF4NET.Samples
             page.Annotations.Add(circle1);
             circle1.Author = "PDF4NET";
             circle1.Contents = "Circle annotation with red border";
-            circle1.BorderColor = new PDFRgbColor(255, 0, 0);
-            circle1.BorderWidth = 3;
+            circle1.Border = new PDFAnnotationBorder();
+            circle1.Border.Color = new PDFRgbColor(255, 0, 0);
+            circle1.Border.Width = 3;
             circle1.DisplayRectangle = new PDFDisplayRectangle(350, 70, 250, 150);
 
             PDFCircleAnnotation circle2 = new PDFCircleAnnotation();
             page.Annotations.Add(circle2);
             circle2.Author = "PDF4NET";
             circle2.Contents = "Circle annotation with blue interior";
-            circle2.BorderColor = null;
-            circle2.BorderWidth = 0;
+            circle2.Border = new PDFAnnotationBorder();
+            circle2.Border.Color = null;
+            circle2.Border.Width = 0;
             circle2.InteriorColor = new PDFRgbColor(0, 0, 192);
             circle2.DisplayRectangle = new PDFDisplayRectangle(350, 270, 250, 150);
 
@@ -173,8 +181,9 @@ namespace O2S.Components.PDF4NET.Samples
             page.Annotations.Add(circle3);
             circle3.Author = "PDF4NET";
             circle3.Contents = "Circle annotation with yellow border and green interior";
-            circle3.BorderColor = new PDFRgbColor(255, 255, 0);
-            circle3.BorderWidth = 3;
+            circle3.Border = new PDFAnnotationBorder();
+            circle3.Border.Color = new PDFRgbColor(255, 255, 0);
+            circle3.Border.Width = 3;
             circle3.InteriorColor = new PDFRgbColor(0, 192, 0);
             circle3.DisplayRectangle = new PDFDisplayRectangle(350, 470, 250, 150);
         }
@@ -201,7 +210,7 @@ namespace O2S.Components.PDF4NET.Samples
                 PDFFileAttachmentAnnotation faa = new PDFFileAttachmentAnnotation();
                 faa.Author = "O2S.Components.PDF4NET";
                 faa.Contents = "I am a " + fileAttachmentAnnotationNames[i] + " annotation.";
-                faa.IconName = fileAttachmentAnnotationNames[i];
+                faa.Icon = fileAttachmentAnnotationNames[i];
                 faa.Payload = fileData;
                 faa.FileName = "BlackAndWhite" + fileAttachmentAnnotationNames[i] + "dat";
                 page.Annotations.Add(faa);
@@ -218,7 +227,7 @@ namespace O2S.Components.PDF4NET.Samples
                 PDFFileAttachmentAnnotation faa = new PDFFileAttachmentAnnotation();
                 faa.Author = "O2S.Components.PDF4NET";
                 faa.Contents = "I am a " + fileAttachmentAnnotationNames[i] + " annotation.";
-                faa.IconName = fileAttachmentAnnotationNames[i];
+                faa.Icon = fileAttachmentAnnotationNames[i];
                 faa.Payload = fileData;
                 faa.FileName = "Color" + fileAttachmentAnnotationNames[i] + "dat";
                 rnd.NextBytes(rgb);
@@ -235,7 +244,7 @@ namespace O2S.Components.PDF4NET.Samples
             customFileAttachmentAnnotation.Author = "O2S.Components.PDF4NET";
             customFileAttachmentAnnotation.Contents = "File attachment annotation with custom icon.";
             page.Annotations.Add(customFileAttachmentAnnotation);
-            customFileAttachmentAnnotation.IconName = "Custom icon appearance";
+            customFileAttachmentAnnotation.Icon = "Custom icon appearance";
             customFileAttachmentAnnotation.Location = new PDFPoint(50, 720);
 
             PDFAnnotationAppearance customAppearance = new PDFAnnotationAppearance(50, 50);
@@ -284,9 +293,9 @@ namespace O2S.Components.PDF4NET.Samples
 
             page.Canvas.DrawString("Line annotations", font, blackBrush, 50, 50);
 
-            PDFLineEndSymbol[] les = new PDFLineEndSymbol[] 
-                { 
-                    PDFLineEndSymbol.Circle, PDFLineEndSymbol.ClosedArrow, PDFLineEndSymbol.None, PDFLineEndSymbol.OpenArrow
+            PDFLineEndingStyle[] les = new PDFLineEndingStyle[] 
+                {
+                    PDFLineEndingStyle.Circle, PDFLineEndingStyle.ClosedArrow, PDFLineEndingStyle.None, PDFLineEndingStyle.OpenArrow
                 };
 
             for (int i = 0; i < les.Length; i++)
@@ -333,8 +342,9 @@ namespace O2S.Components.PDF4NET.Samples
                 polygon.Author = "O2S.Components.PDF4NET";
                 polygon.Contents = "Polygon annotation with " + vertices[i] + " vertices.";
                 polygon.Points = points;
-                polygon.LineColor = new PDFRgbColor(192, 0, 0);
-                polygon.LineWidth = 3;
+                polygon.Border = new PDFAnnotationBorder();
+                polygon.Border.Color = new PDFRgbColor(192, 0, 0);
+                polygon.Border.Width = 3;
                 polygon.InteriorColor = new PDFRgbColor(0, 0, 192);
 
                 centerY = centerY + 150;
@@ -372,11 +382,91 @@ namespace O2S.Components.PDF4NET.Samples
                 polyline.Author = "O2S.Components.PDF4NET";
                 polyline.Contents = "Polyline annotation with " + vertices[i] + " vertices.";
                 polyline.Points = points;
-                polyline.LineColor = new PDFRgbColor(192, 0, 0);
-                polyline.LineWidth = 3;
+                polyline.Border = new PDFAnnotationBorder();
+                polyline.Border.Color = new PDFRgbColor(192, 0, 0);
+                polyline.Border.Width = 3;
 
                 centerY = centerY + 150;
             }
+        }
+
+
+        private static void CreateCloudAnnotations(PDFFixedDocument document, PDFFont font)
+        {
+            PDFBrush blackBrush = new PDFBrush();
+
+            PDFPage page = document.Pages.Add();
+
+            page.Canvas.DrawString("Cloud square annotations", font, blackBrush, 50, 50);
+
+            PDFCloudSquareAnnotation cloudSquare1 = new PDFCloudSquareAnnotation();
+            page.Annotations.Add(cloudSquare1);
+            cloudSquare1.Author = "PDF4NET";
+            cloudSquare1.Contents = "Cloud square annotation with red border";
+            cloudSquare1.Border = new PDFAnnotationBorder();
+            cloudSquare1.Border.Color = new PDFRgbColor(255, 0, 0);
+            cloudSquare1.Border.Width = 1;
+            cloudSquare1.Intensity = 1;
+            cloudSquare1.DisplayRectangle = new PDFDisplayRectangle(50, 70, 250, 150);
+
+            PDFCloudSquareAnnotation cloudSquare2 = new PDFCloudSquareAnnotation();
+            page.Annotations.Add(cloudSquare2);
+            cloudSquare2.Author = "PDF4NET";
+            cloudSquare2.Contents = "Cloud square annotation with blue interior";
+            cloudSquare2.Border = new PDFAnnotationBorder();
+            cloudSquare2.Border.Color = null;
+            cloudSquare2.Border.Width = 0;
+            cloudSquare2.Intensity = 2;
+            cloudSquare2.InteriorColor = new PDFRgbColor(0, 0, 192);
+            cloudSquare2.DisplayRectangle = new PDFDisplayRectangle(50, 270, 250, 150);
+
+            PDFCloudSquareAnnotation cloudSquare3 = new PDFCloudSquareAnnotation();
+            page.Annotations.Add(cloudSquare3);
+            cloudSquare3.Author = "PDF4NET";
+            cloudSquare3.Contents = "Cloud square annotation with yellow border and green interior";
+            cloudSquare3.Border = new PDFAnnotationBorder();
+            cloudSquare3.Border.Color = new PDFRgbColor(255, 255, 0);
+            cloudSquare3.Border.Width = 1;
+            cloudSquare3.InteriorColor = new PDFRgbColor(0, 192, 0);
+            cloudSquare3.DisplayRectangle = new PDFDisplayRectangle(50, 470, 250, 150);
+
+            page.Canvas.DrawString("Cloud polygon annotations", font, blackBrush, 350, 50);
+
+            PDFCloudPolygonAnnotation cloudPolygon1 = new PDFCloudPolygonAnnotation();
+            page.Annotations.Add(cloudPolygon1);
+            cloudPolygon1.Author = "PDF4NET";
+            cloudPolygon1.Contents = "Cloud polygon annotation with red border";
+            cloudPolygon1.Border = new PDFAnnotationBorder();
+            cloudPolygon1.Border.Color = new PDFRgbColor(255, 0, 0);
+            cloudPolygon1.Border.Width = 3;
+            cloudPolygon1.Points = new PDFPoint[] { new PDFPoint(350, 145), new PDFPoint(475, 70), new PDFPoint(600, 145), new PDFPoint(475, 220), new PDFPoint(350, 145) };
+
+            PDFCloudPolygonAnnotation cloudPolygon2 = new PDFCloudPolygonAnnotation();
+            page.Annotations.Add(cloudPolygon2);
+            cloudPolygon2.Author = "PDF4NET";
+            cloudPolygon2.Contents = "Cloud polygon annotation with blue interior";
+            cloudPolygon2.Border = new PDFAnnotationBorder();
+            cloudPolygon2.Border.Color = null;
+            cloudPolygon2.Border.Width = 0;
+            cloudPolygon2.InteriorColor = new PDFRgbColor(0, 0, 192);
+            cloudPolygon2.Intensity = 1;
+            cloudPolygon2.Points = new PDFPoint[] {
+                new PDFPoint(350, 345), new PDFPoint(370, 290), new PDFPoint(475, 270), new PDFPoint(580, 290),
+                new PDFPoint(600, 345), new PDFPoint(580, 400), new PDFPoint(475, 420), new PDFPoint(370, 400), new PDFPoint(350, 345)
+            };
+
+            PDFCloudPolygonAnnotation cloudPolygon3 = new PDFCloudPolygonAnnotation();
+            page.Annotations.Add(cloudPolygon3);
+            cloudPolygon3.Author = "PDF4NET";
+            cloudPolygon3.Contents = "Cloud polygon annotation with yellow border and green interior";
+            cloudPolygon3.Border = new PDFAnnotationBorder();
+            cloudPolygon3.Border.Color = new PDFRgbColor(255, 255, 0);
+            cloudPolygon3.Border.Width = 1;
+            cloudPolygon3.InteriorColor = new PDFRgbColor(0, 192, 0);
+            cloudPolygon3.Points = new PDFPoint[] {
+                new PDFPoint(350, 545), new PDFPoint(455, 525), new PDFPoint(475, 470), new PDFPoint(495, 525),
+                new PDFPoint(600, 545), new PDFPoint(495, 565), new PDFPoint(475, 620), new PDFPoint(455, 565), new PDFPoint(350, 545)
+            };
         }
 
         private static void CreateRubberStampAnnotations(PDFFixedDocument document, PDFFont font)
