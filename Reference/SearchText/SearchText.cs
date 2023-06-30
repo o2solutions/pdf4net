@@ -41,13 +41,13 @@ namespace O2S.Components.PDF4NET.Samples
 
             for (int i = 0; i < searchResults.Count; i++)
             {
-                PDFTextFragmentCollection tfc = searchResults[i].TextFragments;
+                PDFTextRunCollection tfc = searchResults[i].TextRuns;
                 for (int j = 0; j < tfc.Count; j++)
                 {
                     PDFPath path = new PDFPath();
 
-                    path.StartSubpath(tfc[j].FragmentCorners[0].X, tfc[j].FragmentCorners[0].Y);
-                    path.AddPolygon(tfc[j].FragmentCorners);
+                    path.StartSubpath(tfc[j].Corners[0].X, tfc[j].Corners[0].Y);
+                    path.AddPolygon(tfc[j].Corners);
 
                     page.Canvas.DrawPath(pen, path);
                 }

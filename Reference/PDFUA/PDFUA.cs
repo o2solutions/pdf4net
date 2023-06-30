@@ -73,42 +73,42 @@ namespace O2S.Components.PDF4NET.Samples
             PDFStructureElement seHeading = new PDFStructureElement(PDFStandardStructureTypes.Heading);
             seSection.AppendChild(seHeading);
 
-            page.Graphics.BeginStructureElement(seHeading);
-            page.Graphics.DrawString("Page heading", headingFont, blackBrush, 30, 50);
-            page.Graphics.EndStructureElement();
+            page.Canvas.BeginStructureElement(seHeading);
+            page.Canvas.DrawString("Page heading", headingFont, blackBrush, 30, 50);
+            page.Canvas.EndStructureElement();
 
             PDFStructureElement seParagraph1 = new PDFStructureElement(PDFStandardStructureTypes.Paragraph);
             seSection.AppendChild(seParagraph1);
 
-            page.Graphics.BeginStructureElement(seParagraph1);
-            page.Graphics.DrawString("Sample paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in sodales ligula at lobortis.", textFont, blackBrush, 30, 70);
-            page.Graphics.EndStructureElement();
+            page.Canvas.BeginStructureElement(seParagraph1);
+            page.Canvas.DrawString("Sample paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in sodales ligula at lobortis.", textFont, blackBrush, 30, 70);
+            page.Canvas.EndStructureElement();
 
             PDFStructureElement seFigure = new PDFStructureElement(PDFStandardStructureTypes.Figure);
             seFigure.ActualText = "PDF4NET";
             seFigure.AlternateDescription = "PDF4NET Logo";
             seSection.AppendChild(seFigure);
 
-            page.Graphics.BeginStructureElement(seFigure);
+            page.Canvas.BeginStructureElement(seFigure);
             PDFPngImage logoImage = new PDFPngImage(imageStream);
-            page.Graphics.DrawImage(logoImage, 30, 90, 256, 128);
-            page.Graphics.EndStructureElement();
+            page.Canvas.DrawImage(logoImage, 30, 90, 256, 128);
+            page.Canvas.EndStructureElement();
 
             // A structure element with 2 content items and an artifact between them.
             PDFStructureElement seParagraph2 = new PDFStructureElement(PDFStandardStructureTypes.Paragraph);
             seSection.AppendChild(seParagraph2);
 
-            page.Graphics.BeginStructureElement(seParagraph2);
-            page.Graphics.DrawString("First line of text.", textFont, blackBrush, 30, 230);
-            page.Graphics.EndStructureElement();
+            page.Canvas.BeginStructureElement(seParagraph2);
+            page.Canvas.DrawString("First line of text.", textFont, blackBrush, 30, 230);
+            page.Canvas.EndStructureElement();
 
-            page.Graphics.BeginArtifactMarkedContent();
-            page.Graphics.DrawLine(blackPen, 30, 242, 100, 242);
-            page.Graphics.EndMarkedContent();
+            page.Canvas.BeginArtifactMarkedContent();
+            page.Canvas.DrawLine(blackPen, 30, 242, 100, 242);
+            page.Canvas.EndMarkedContent();
 
-            page.Graphics.BeginStructureElement(seParagraph2);
-            page.Graphics.DrawString("Second line of text.", textFont, blackBrush, 30, 245);
-            page.Graphics.EndStructureElement();
+            page.Canvas.BeginStructureElement(seParagraph2);
+            page.Canvas.DrawString("Second line of text.", textFont, blackBrush, 30, 245);
+            page.Canvas.EndStructureElement();
 
             PDFStructureElement seParagraph3 = new PDFStructureElement(PDFStandardStructureTypes.Paragraph);
             seSection.AppendChild(seParagraph3);
@@ -125,7 +125,7 @@ namespace O2S.Components.PDF4NET.Samples
             slo.X = 30;
             slo.Y = 260;
             slo.Width = 550;
-            page.Graphics.DrawString(text, sao, slo, seParagraph3);
+            page.Canvas.DrawString(text, sao, slo, seParagraph3);
 
             // A custom structure element that will be mapped to standard Pargraph structure.
             PDFStructureElement seSpecialParagraph = new PDFStructureElement("SpecialParagraph");
@@ -133,11 +133,11 @@ namespace O2S.Components.PDF4NET.Samples
             seSpecialParagraph.ID = "specialpara";
             seSection.AppendChild(seSpecialParagraph);
 
-            page.Graphics.BeginStructureElement(seSpecialParagraph);
+            page.Canvas.BeginStructureElement(seSpecialParagraph);
             textFont.Underline = false;
             textFont.Size = 18;
-            page.Graphics.DrawString("A special paragraph with custom structure element type.", textFont, blackBrush, 30, 350);
-            page.Graphics.EndStructureElement();
+            page.Canvas.DrawString("A special paragraph with custom structure element type.", textFont, blackBrush, 30, 350);
+            page.Canvas.EndStructureElement();
 
             // Map the custom structure type to a known structure type.
             document.StructureTree.RoleMap = new PDFRoleMap();
@@ -169,9 +169,9 @@ namespace O2S.Components.PDF4NET.Samples
             PDFStructureElement seHeading = new PDFStructureElement(PDFStandardStructureTypes.Heading);
             seSection.AppendChild(seHeading);
 
-            page.Graphics.BeginStructureElement(seHeading);
-            page.Graphics.DrawString("Another heading", headingFont, blackBrush, 30, 50);
-            page.Graphics.EndStructureElement();
+            page.Canvas.BeginStructureElement(seHeading);
+            page.Canvas.DrawString("Another heading", headingFont, blackBrush, 30, 50);
+            page.Canvas.EndStructureElement();
 
             PDFFormattedContent fc = new PDFFormattedContent();
 
@@ -211,7 +211,7 @@ namespace O2S.Components.PDF4NET.Samples
             seSection.AppendChild(paragraph3.StructureElement);
             fc.Paragraphs.Add(paragraph3);
 
-            page.Graphics.DrawFormattedContent(fc, 30, 70, 550, 0);
+            page.Canvas.DrawFormattedContent(fc, 30, 70, 550, 0);
         }
 
         private static void AnnotationsAndFormFields(PDFFixedDocument document, PDFStructureElement seParent, PDFAnsiTrueTypeFont font)
@@ -230,23 +230,23 @@ namespace O2S.Components.PDF4NET.Samples
             PDFStructureElement seHeading = new PDFStructureElement(PDFStandardStructureTypes.Heading);
             seSection.AppendChild(seHeading);
 
-            page.Graphics.BeginStructureElement(seHeading);
-            page.Graphics.DrawString("Annotations and form fields", headingFont, blackBrush, 30, 50);
-            page.Graphics.EndStructureElement();
+            page.Canvas.BeginStructureElement(seHeading);
+            page.Canvas.DrawString("Annotations and form fields", headingFont, blackBrush, 30, 50);
+            page.Canvas.EndStructureElement();
 
             PDFStructureElement seParagraph1 = new PDFStructureElement(PDFStandardStructureTypes.Paragraph);
             seSection.AppendChild(seParagraph1);
 
-            page.Graphics.BeginStructureElement(seParagraph1);
-            page.Graphics.DrawString("Our website:", textFont, blackBrush, 30, 70);
-            page.Graphics.EndStructureElement();
+            page.Canvas.BeginStructureElement(seParagraph1);
+            page.Canvas.DrawString("Our website:", textFont, blackBrush, 30, 70);
+            page.Canvas.EndStructureElement();
 
             PDFStructureElement seLink = new PDFStructureElement(PDFStandardStructureTypes.Link);
             seParagraph1.AppendChild(seLink);
 
-            page.Graphics.BeginStructureElement(seLink);
-            page.Graphics.DrawString("http://www.o2sol.com/", textFont, blackBrush, 100, 70);
-            page.Graphics.EndStructureElement();
+            page.Canvas.BeginStructureElement(seLink);
+            page.Canvas.DrawString("http://www.o2sol.com/", textFont, blackBrush, 100, 70);
+            page.Canvas.EndStructureElement();
 
             PDFLinkAnnotation link = new PDFLinkAnnotation();
             page.Annotations.Add(link);
@@ -263,9 +263,9 @@ namespace O2S.Components.PDF4NET.Samples
             PDFStructureElement seParagraph2 = new PDFStructureElement(PDFStandardStructureTypes.Paragraph);
             seSection.AppendChild(seParagraph2);
 
-            page.Graphics.BeginStructureElement(seParagraph2);
-            page.Graphics.DrawString("Enter your name:", textFont, blackBrush, 30, 100);
-            page.Graphics.EndStructureElement();
+            page.Canvas.BeginStructureElement(seParagraph2);
+            page.Canvas.DrawString("Enter your name:", textFont, blackBrush, 30, 100);
+            page.Canvas.EndStructureElement();
 
             PDFStructureElement seForm = new PDFStructureElement(PDFStandardStructureTypes.Form);
             seParagraph2.AppendChild(seForm);
