@@ -10,7 +10,7 @@ using O2S.Components.PDF4NET.Utilities;
 
 namespace O2S.Components.PDF4NET.Samples.NetCore
 {
-    class SaveSignedCopy
+    class ShowSignatureCertificate
     {
         static void Main(string[] args)
         {
