@@ -272,7 +272,9 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
   - Convert PDF pages to images up to 32bpp 65536x65536 pixels
   - Native RGBA, BGRA, ARGB, RGB, BGR and Grayscale rendering
   - Built-in graphic engine that produces pixel matched results across all supported platforms
+  - Multi-threaded PDF to image conversion
   - Selective content rendering: text and/or vector graphics and/or images and/or form fields and/or annotations
+  - Turn on/off layer visibility for PDF to image conversion
   - Supported PDF features:
       - Stroked and filled vector graphics
       - Clipping paths including text based clipping paths
