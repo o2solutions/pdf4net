@@ -1,0 +1,1 @@
+The `FlowDocumentWithExternalPages` sample shows how integrate PDF pages from external PDF files into a flow document. External pages can be read  only (flow content will not be added to them) or they can be writeable and flow content can be added to them.
