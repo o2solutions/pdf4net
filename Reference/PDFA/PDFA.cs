@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using O2S.Components.PDF4NET;
 using O2S.Components.PDF4NET.Graphics;
-using O2S.Components.PDF4NET.Canvas.OptionalContent;
+using O2S.Components.PDF4NET.Graphics.OptionalContent;
 using O2S.Components.PDF4NET.Standards;
 
 namespace O2S.Components.PDF4NET.Samples
