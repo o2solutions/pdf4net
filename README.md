@@ -12,7 +12,7 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
 
 ##### SUPPORTED PLATFORMS	 
   - .NET Framework 4.x	
-  - .NET 5 / 6 / 7
+  - .NET 5 / 6 / 7 / 8
   - Windows Forms	
   - Xamarin.Mac	
   - ASP.NET Webforms and MVC	
@@ -245,6 +245,8 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
   - Convert images to Grayscale	
   - Replace page images	
   - Remove page images	
+  - Enhanced contextual information for path, text and image operators
+  - High performance read-only page content analysis
  
 ##### CONTENT REDACTION	 
  
@@ -262,8 +264,7 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
 ##### LOW LEVEL COS API	 
  
   - Add, edit and remove COS objects	
-  - Supported COS objects: strings, numbers, names, booleans, nulls,
-  arrays, dictionaries and streams	
+  - Supported COS objects: strings, numbers, names, booleans, nulls, arrays, dictionaries and streams	
 
 ##### PDF RENDERING (included in PDF4NET+Render package)	 
  
