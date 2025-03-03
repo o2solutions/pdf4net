@@ -69,6 +69,8 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
 ##### FLOW DOCUMENT FEATURES	 
  
   - Mixed formatted text	
+  - Left-to-Right and Right-to-Left text 
+  - Complex scripts  
   - Superscript/subscript text	
   - Images	
   - Form XObjects	
@@ -116,6 +118,8 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
   - Images (see Images section) and form XObjects	
   - Transparency groups	
   - Single line and multi line text with vertical and horizontal aligment, including justified text	
+  - Left-to-Right and Right-to-Left text 
+  - Complex scripts  
   - Extended graphics states with support for fill and stroke alpha, blend modes and overprinting	
   - Affine transformations: multiply, translate, rotate and scale	
   - Shadings - function, axial and radial	
@@ -141,6 +145,32 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
     - Small capitals
     - Old style figures
  
+##### COMPLEX SCRIPTS
+ 
+  - Left-to-Right and Right-to-Left text
+  - Complex scripts:	
+    - Arabic	
+    - Bengali	
+    - Devanagari	
+    - Gujarati	
+    - Gurmukhi	
+    - Hebrew	
+    - Kannada	
+    - Kashmiri	
+    - Khmer	
+    - Kurdish	
+    - Lao	
+    - Malayalam	
+    - Myanmar Burmese	
+    - Oriya	
+    - Persian	
+    - Sindhi	
+    - Tamil	
+    - Telugu	
+    - Thai	
+    - Urdu	
+    - Uyghur 
+   
 ##### IMAGES	 
  
   - Load images from files and streams	
@@ -196,6 +226,8 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
   - Add, edit, remove and rename form fields	
   - Support for text box fields, combo box fields, list box fields,   push button fields, check box fields, radio button fields, signature fields	
   - Read/Write (fill) form fields	
+  - Left-to-Right and Right-to-Left text 
+  - Complex scripts  
   - Create custom appearances for field widgets	
   - Flatten form fields	
   - Form actions (see PDF actions)	

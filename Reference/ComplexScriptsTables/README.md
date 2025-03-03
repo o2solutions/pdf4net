@@ -1,0 +1,1 @@
+The `ComplexScriptsTables` sample shows how to creates tables with Arabic, Bengali, Devanagari, Gujarati, Gurmukhi, Hebrew, Kannada, Kashmiri, Khmer, Kurdish, Lao, Malayalam, Myanmar Burmese, Oriya, Persian, Sindhi, Tamil, Telugu, Thai, Urdu and Uyghur text.

@@ -1,0 +1,1 @@
+The `ComplexScriptsText` sample shows how to draw simple text using complex scripts such as: Arabic, Bengali, Devanagari, Gujarati, Gurmukhi, Hebrew, Kannada, Kashmiri, Khmer, Kurdish, Lao, Malayalam, Myanmar Burmese, Oriya, Persian, Sindhi, Tamil, Telugu, Thai, Urdu and Uyghur.
