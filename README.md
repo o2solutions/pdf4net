@@ -12,18 +12,17 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
 
 ##### SUPPORTED PLATFORMS	 
   - .NET Framework 4.x	
-  - .NET 5 / 6 / 7 / 8
+  - .NET 5 / 6 / 7 / 8 / 9 / 10
   - Windows Forms	
-  - Xamarin.Mac	
   - ASP.NET Webforms and MVC	
   - Console applications	
   - Windows services	
-  - Mono	
   - WPF 4.x	
-  - Xamarin.iOS	
-  - Xamarin.Android	
-  - Xamarin.Forms	
   - Universal Windows Platform	
+  - .NET Mac	
+  - .NET iOS	
+  - .NET Android	
+  - .NET MAUI	
   - .NET Core 2.x / 3.x
   - .NET Standard
 
@@ -320,6 +319,80 @@ The main features of [**PDF4NET**](https://o2sol.com/pdf4net/overview.htm) libra
       - Blend modes
       - PDF patterns
       - PDF shadings (gradients)
+
+##### PDF VIEWING (included in PDF4NET+Render package)	 
+
+  - Display PDF files in Windows Forms and WPF applications (.NET and .NET Framework supported)
+  - Document zoom
+    * Fixed value zoom (100%, 200%, etc)
+    * Pinch-to-Zoom support
+    * CTRL + mouse wheel zoom
+  - Flexible page layouts
+    * Column based layout - display pages in multiple columns
+    * Row based - display pages in multiple rows
+    * Fixed grid - display a fixed grid (m*n) of pages
+  - Pages management
+    * Add/delete pages
+    * Rotate pages
+    * Default page context menu to rotate or delete pages
+  - Content selection
+    * Select text
+    * Select rectangular area on the page
+    * CTRL-C to copy selected text
+  - Text search
+    * Search current page / visible pages / all pages in a document
+    * Highlight all search results or highlight search results one by one
+    * Search options: case sensitive, accent sensitive, match whole word, regex search
+  - Highlight text
+    * Highlight
+    * Flat underline
+    * Squiggly underline
+    * Strikeout
+  - Annotations
+    * Add new annotations
+      - Text
+      - Rubber stamp
+      - Circle
+      - Square
+      - Cloud square
+      - Line
+      - Polyline
+      - Polygon
+      - Cloud polygon
+      - Ink
+      - Link
+      - File attachment
+      - Free text
+    * Edit and remove annotations from code or using the default annotation context menu
+    * Move and resize annotations
+    * Select one or more annotations (CTRL + mouse or draw a selection rectangle) for group manipulation
+  - PDF Forms
+    * Fill PDF forms
+    * Add new form fields
+      - Textbox
+      - CheckBox
+      - RadioButton
+      - ComboBox
+      - ListBox
+      - PushButton
+      - Signature
+    * Edit and remove form fields from code or using the default field context menu
+    * Select one or more fields (CTRL + mouse or draw a selection rectangle) for group manipulation
+    * Extended form design operations
+      - Align left
+      - Align center
+      - Align right
+      - Align top
+      - Align middle
+      - Align bottom
+      - Center horizontally
+      - Center vertically
+      - Center both
+      - Make same width
+      - Make same height
+      - Make same size
+      - Distribute horizontally
+      - Distribute vertically
  
 ##### LICENSING	 
  
