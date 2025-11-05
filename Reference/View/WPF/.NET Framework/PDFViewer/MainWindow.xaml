@@ -1,0 +1,250 @@
+﻿<Window x:Class="PDFViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:pdfView="clr-namespace:O2S.Components.PDF4NET.View;assembly=O2S.Components.PDF4NET.View.Wpf"
+        xmlns:local="clr-namespace:PDFViewer"
+        mc:Ignorable="d"
+        Title="PDF4NET - PDF Viewer" Height="450" Width="800"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="btv" />
+        <Style x:Key="ImageDisabled" TargetType="Image">
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.25"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ToolBarTray Grid.Row="0">
+            <ToolBar Band="1" BandIndex="1">
+                <Button Command="{Binding OpenPDFCommand}">
+                    <Image Source="/Resources/File.Open.png" />
+                </Button>
+                <Button Command="{Binding SavePDFCommand}">
+                    <Image Source="/Resources/File.Save.png" Style="{StaticResource ImageDisabled}" />
+                </Button>
+                <Button Command="{Binding ClosePDFCommand}">
+                    <Image Source="/Resources/File.Close.png" Style="{StaticResource ImageDisabled}" />
+                </Button>
+                <Separator></Separator>
+                <Label>Zoom:</Label>
+                <ComboBox x:Name="cbxZoom" SelectedIndex="3" Width="60" IsEditable="True" KeyUp="cbxZoom_KeyUp" SelectionChanged="cbxZoom_SelectionChanged">
+                    <ComboBoxItem>25%</ComboBoxItem>
+                    <ComboBoxItem>50%</ComboBoxItem>
+                    <ComboBoxItem>75%</ComboBoxItem>
+                    <ComboBoxItem>100%</ComboBoxItem>
+                    <ComboBoxItem>200%</ComboBoxItem>
+                    <ComboBoxItem>300%</ComboBoxItem>
+                    <ComboBoxItem>400%</ComboBoxItem>
+                    <ComboBoxItem>500%</ComboBoxItem>
+                </ComboBox>
+                <Button Command="{Binding ZoomFitWidthCommand}">
+                    <Image Source="/Resources/File.FitWidth.png" Style="{StaticResource ImageDisabled}" />
+                </Button>
+                <Separator></Separator>
+                <ToggleButton x:Name="btnLayoutSingleColumn" Command="{Binding LayoutSingleColumnCommand}">
+                    <Image Source="/Resources/Layout.SingleColumn.png" Style="{StaticResource ImageDisabled}" />
+                </ToggleButton>
+                <ToggleButton x:Name="btnLayoutSingleRow" Command="{Binding LayoutSingleRowCommand}">
+                    <Image Source="/Resources/Layout.Singlerow.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <Separator></Separator>
+                <ToggleButton x:Name="btnPanAndScan" Command="{Binding PanAndScanCommand}" >
+                    <Image Source="/Resources/File.PanAndScan.png" Style="{StaticResource ImageDisabled}" Width="16" Height="16"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnSelectContent" Command="{Binding SelectContentCommand}">
+                    <Image Source="/Resources/File.SelectContent.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnComment" Command="{Binding CommentCommand}">
+                    <Image Source="/Resources/File.Annotations.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnEditForm" Command="{Binding EditFormCommand}">
+                    <Image Source="/Resources/FormField.Edit.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnHighlightContent" Command="{Binding HighlightContentCommand}">
+                    <Image Source="/Resources/Text.Highlight.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnSearch" Command="{Binding SearchCommand}">
+                    <Image Source="/Resources/Search.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+            </ToolBar>
+            <ToolBar Band="2" BandIndex="1" Visibility="{Binding IsChecked, Converter={StaticResource btv}, ElementName=btnComment}">
+                <ToggleButton x:Name="btnAnnotationsEdit" Command="{Binding EditAnnotationsCommand}">
+                    <Image Source="/Resources/Annotations.Edit.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <Separator></Separator>
+                <ToggleButton x:Name="btnAnnotationsText" Command="{Binding AddTextAnnotationCommand}">
+                    <Image Source="/Resources/Annotations.Text.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnAnnotationsStamp" Command="{Binding AddRubberStampAnnotationCommand}">
+                    <Image Source="/Resources/Annotations.RubberStamp.png" Width="16" Height="16" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnAnnotationsCircle" Command="{Binding AddCircleAnnotationCommand}">
+                    <Image Source="/Resources/Annotations.Circle.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnAnnotationsSquare" Command="{Binding AddSquareAnnotationCommand}">
+                    <Image Source="/Resources/Annotations.Square.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnAnnotationsCloudSquare" Command="{Binding AddCloudSquareAnnotationCommand}">
+                    <Image Source="/Resources/Annotations.CloudSquare.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnAnnotationsLine" Command="{Binding AddLineAnnotationCommand}">
+                    <Image Source="/Resources/Annotations.Line.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnAnnotationsPolyline" Command="{Binding AddPolylineAnnotationCommand}">
+                    <Image Source="/Resources/Annotations.Polyline.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnAnnotationsPolygon" Command="{Binding AddPolygonAnnotationCommand}">
+                    <Image Source="/Resources/Annotations.Polygon.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnAnnotationsCloudPolygon" Command="{Binding AddCloudPolygonAnnotationCommand}">
+                    <Image Source="/Resources/Annotations.CloudPolygon.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnAnnotationsInk" Command="{Binding AddInkAnnotationCommand}">
+                    <Image Source="/Resources/Annotations.Ink.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnAnnotationsLink" Command="{Binding AddLinkAnnotationCommand}">
+                    <Image Source="/Resources/Annotations.Hyperlink.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnAnnotationsFileAttachment" Command="{Binding AddFileAttachmentAnnotationCommand}">
+                    <Image Source="/Resources/Annotations.FileAttachment.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnAnnotationsFreeText" Command="{Binding AddFreeTextAnnotationCommand}">
+                    <Image Source="/Resources/Annotations.FreeText.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+            </ToolBar>
+            <ToolBar Band="3" BandIndex="1" Visibility="{Binding IsChecked, Converter={StaticResource btv}, ElementName=btnEditForm}">
+                <ToggleButton x:Name="btnFormFieldsEdit" Command="{Binding EditFormFieldsCommand}">
+                    <Image Source="/Resources/FormField.Edit.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <Separator></Separator>
+                <ToggleButton x:Name="btnFormFieldsAddTextBox" Command="{Binding AddTextBoxFieldCommand}">
+                    <Image Source="/Resources/FormField.TextBox.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnFormFieldsAddCheckBox" Command="{Binding AddCheckBoxFieldCommand}">
+                    <Image Source="/Resources/FormField.CheckBox.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnFormFieldsAddRadioButton" Command="{Binding AddRadioButtonFieldCommand}">
+                    <Image Source="/Resources/FormField.RadioButton.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnFormFieldsAddComboBox" Command="{Binding AddComboBoxFieldCommand}">
+                    <Image Source="/Resources/FormField.ComboBox.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnFormFieldsAddListBox" Command="{Binding AddListBoxFieldCommand}">
+                    <Image Source="/Resources/FormField.ListBox.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnFormFieldsAddButton" Command="{Binding AddPushButtonFieldCommand}">
+                    <Image Source="/Resources/FormField.Button.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnFormFieldsAddSignature" Command="{Binding AddSignatureFieldCommand}">
+                    <Image Source="/Resources/FormField.Signature.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <Separator></Separator>
+                <Button x:Name="btnFormDesignerAlignLeft" Command="{Binding FormDesignerAlignLeftCommand}">
+                    <Image Source="/Resources/FormDesigner.AlignLeft.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Button x:Name="btnFormDesignerAlignCenter" Command="{Binding FormDesignerAlignCenterCommand}">
+                    <Image Source="/Resources/FormDesigner.AlignCenter.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Button x:Name="btnFormDesignerAlignRight" Command="{Binding FormDesignerAlignRightCommand}">
+                    <Image Source="/Resources/FormDesigner.AlignRight.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Button x:Name="btnFormDesignerAlignTop" Command="{Binding FormDesignerAlignTopCommand}">
+                    <Image Source="/Resources/FormDesigner.AlignTop.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Button x:Name="btnFormDesignerAlignMiddle" Command="{Binding FormDesignerAlignMiddleCommand}">
+                    <Image Source="/Resources/FormDesigner.AlignMiddle.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Button x:Name="btnFormDesignerAlignBottom" Command="{Binding FormDesignerAlignBottomCommand}">
+                    <Image Source="/Resources/FormDesigner.AlignBottom.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Separator></Separator>
+                <Button x:Name="btnFormDesignerCenterHorizontally" Command="{Binding FormDesignerCenterHorizontallyCommand}">
+                    <Image Source="/Resources/FormDesigner.CenterHorizontally.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Button x:Name="btnFormDesignerCenterVertically" Command="{Binding FormDesignerCenterVerticallyCommand}">
+                    <Image Source="/Resources/FormDesigner.CenterVertically.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Button x:Name="btnFormDesignerCenterBoth" Command="{Binding FormDesignerCenterBothCommand}">
+                    <Image Source="/Resources/FormDesigner.CenterBoth.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Separator></Separator>
+                <Button x:Name="btnFormDesignerMakeSameWidth" Command="{Binding FormDesignerMakeSameWidthCommand}">
+                    <Image Source="/Resources/FormDesigner.MakeSameWidth.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Button x:Name="btnFormDesignerMakeSameHeight" Command="{Binding FormDesignerMakeSameHeightCommand}">
+                    <Image Source="/Resources/FormDesigner.MakeSameHeight.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Button x:Name="btnFormDesignerMakeSameSize" Command="{Binding FormDesignerMakeSameWidthAndHeightCommand}">
+                    <Image Source="/Resources/FormDesigner.MakeSameWidthAndHeight.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Separator></Separator>
+                <Button x:Name="btnFormDesignerDistributeHorizontally" Command="{Binding FormDesignerDistributeHorizontallyCommand}">
+                    <Image Source="/Resources/FormDesigner.DistributeHorizontally.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Button x:Name="btnFormDesignerDistributeVertically" Command="{Binding FormDesignerDistributeVerticallyCommand}">
+                    <Image Source="/Resources/FormDesigner.DistributeVertically.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+            </ToolBar>
+            <ToolBar Band="4" BandIndex="1" Visibility="{Binding IsChecked, Converter={StaticResource btv}, ElementName=btnHighlightContent}">
+                <ToggleButton x:Name="btnTextHighlight" Command="{Binding HighlightTextCommand}">
+                    <Image Source="/Resources/Text.Highlight.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnTextSquiggly" Command="{Binding SquigglyUnderlineTextCommand}">
+                    <Image Source="/Resources/Text.Squiggly.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnTextStrikeout" Command="{Binding StrikeoutTextCommand}">
+                    <Image Source="/Resources/Text.Strikeout.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnTextUnderline" Command="{Binding FlatUnderlineTextCommand}">
+                    <Image Source="/Resources/Text.Underline.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+            </ToolBar>
+            <ToolBar Band="5" BandIndex="1" Visibility="{Binding IsChecked, Converter={StaticResource btv}, ElementName=btnSearch}">
+                <Label>Find:</Label>
+                <TextBox x:Name="txtFind" Width="150" KeyUp="txtFind_KeyUp"></TextBox>
+                <ComboBox x:Name="cbxRange" SelectedIndex="2" IsEditable="False" SelectionChanged="cbxRange_SelectionChanged">
+                    <ComboBoxItem>Current page</ComboBoxItem>
+                    <ComboBoxItem>Visible pages</ComboBoxItem>
+                    <ComboBoxItem>All pages</ComboBoxItem>
+                </ComboBox>
+                <Button x:Name="btnFindPrevious" Command="{Binding FindPreviousCommand}">
+                    <Image Source="/Resources/FindPrevious.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Button x:Name="btnFindNext" Command="{Binding FindNextCommand}">
+                    <Image Source="/Resources/FindNext.png" Style="{StaticResource ImageDisabled}"/>
+                </Button>
+                <Separator></Separator>
+                <ToggleButton x:Name="btnMatchCase" Command="{Binding FindMatchCaseCommand}">
+                    <Image Source="/Resources/MatchCase.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnMatchAccent" Command="{Binding FindMatchAccentCommand}">
+                    <Image Source="/Resources/MatchAccent.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnMatchWholeWord" Command="{Binding FindMatchWholeWordCommand}">
+                    <Image Source="/Resources/MatchWholeWord.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+                <ToggleButton x:Name="btnMatchRegEx" Command="{Binding FindMatchRegExCommand}">
+                    <Image Source="/Resources/RegularExpression.png" Style="{StaticResource ImageDisabled}"/>
+                </ToggleButton>
+            </ToolBar>
+        </ToolBarTray>
+        <pdfView:PDFDocumentView x:Name="documentView" Grid.Row="1" Background="LightGray"
+            ZoomChanged="documentView_ZoomChanged"
+            UserInteractionModeChanged="documentView_UserInteractionModeChanged"
+            AnnotationSelected="documentView_AnnotationSelected"
+            AnnotationDeselected="documentView_AnnotationDeselected"
+            BeforePageDelete="documentView_BeforePageDelete"
+            BeforeAnnotationDelete="documentView_BeforeAnnotationDelete"
+            />
+    </Grid>
+</Window>
