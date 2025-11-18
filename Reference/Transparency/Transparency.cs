@@ -41,7 +41,7 @@ namespace O2S.Components.PDF4NET.Samples
             // Transparent images
             page.Canvas.SaveGraphicsState();
             page.Canvas.SetExtendedGraphicState(gs2);
-            using (FileStream tiffStream = File.OpenRead("..\\..\\..\\..\\..\\SupportFiles\\ cmyk.tif"))
+            using (FileStream tiffStream = File.OpenRead("..\\..\\..\\..\\..\\SupportFiles\\cmyk.tif"))
             {
                 page.Canvas.DrawImage(new PDFTiffImage(tiffStream), 50, 250, 500, 400);
             }
