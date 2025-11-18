@@ -1,0 +1,2 @@
+The `Transparency` sample shows how to draw transparent graphics on a PDF page. The transparency is controlled separatelly for fill and stroke operations using the `FillAlpha` and `StrokeAlpha` properties in the `PDFExtendedGraphicState` class.
+Once the graphics state has been set in the page content, its properties (`FillAlpha` and `StrokeAlpha` included) affect all the drawing operations that follow, so it is recommended to put the desired graphic operations between `SaveGraphicsState` / `RestoreGraphicsState`.
